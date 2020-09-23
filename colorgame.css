@@ -1,0 +1,43 @@
+.heading
+{
+	background-color: rgb(230, 120, 230);
+	margin: 0 auto;
+	color: black;
+
+}
+.semihead
+{
+	background-color: white;
+}
+body
+{
+	background-color: #232323;
+	zoom: 67%;
+}
+.square
+{
+	width: 30%;
+	padding-bottom: 30%;
+	background-color: #232323;
+	float: left;
+	margin: 1.66%;
+}
+#container
+{
+	max-width: 600px;
+	margin: 0 auto;
+
+}
+#headAlign
+{
+	margin-left: 200px;
+}
+span
+{
+	margin-left: 100px;
+	margin-right: 100px;
+}
+#rules
+{
+	color: white;
+}
