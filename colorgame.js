@@ -12,7 +12,6 @@ var colorDisp= document.getElementById("pickedcolor");
 var help= document.querySelector(".madad");
 var rules=document.getElementById("rules");
 var clickedcolor;
-var score=50;
 
 reset();
 
@@ -80,8 +79,7 @@ for(var i=0;i< square.length; i++)
 
 		if(clickedcolor===pickedcolor)
 		{
-			instruction.textContent="Right! Score="+score;
-			score=50;
+			instruction.textContent="You Guessed Right!";
 			newgame.textContent="Play Again?"
             heading.style.backgroundColor=pickedcolor;
             for(var j=0;j<square.length;j++)
@@ -92,7 +90,7 @@ for(var i=0;i< square.length; i++)
 		else if(clickedcolor!==pickedcolor){
 			this.style.backgroundColor="#232323";
 			instruction.textContent="Try Again!!!!";
-			score-=10;
+			
 		}
 	});
 }
