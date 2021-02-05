@@ -12,6 +12,7 @@ var colorDisp= document.getElementById("pickedcolor");
 var help= document.querySelector(".madad");
 var rules=document.getElementById("rules");
 var clickedcolor;
+var score=50;
 
 reset();
 
@@ -32,7 +33,7 @@ easy.addEventListener("click", function()
 {
 	if(flag===1)
 	{
-	size=3;flag=0;
+	size=3;flag=0;score=20;
 	level[0].classList.remove("square");
 	level[1].classList.remove("square");
     level[2].classList.remove("square");
@@ -46,7 +47,7 @@ hard.addEventListener("click", function()
 {
 	if(flag===0)
 	{
-		size=6;flag=1;
+		size=6;flag=1; score=50;
         level[0].classList.add("square");
         level[1].classList.add("square");
 		level[2].classList.add("square");
@@ -79,7 +80,9 @@ for(var i=0;i< square.length; i++)
 
 		if(clickedcolor===pickedcolor)
 		{
-			instruction.textContent="You Guessed Right!";
+			instruction.textContent="Right! Score="+score;
+			if(flag===1)score=50;
+			else if(flag===0) score=20;
 			newgame.textContent="Play Again?"
             heading.style.backgroundColor=pickedcolor;
             for(var j=0;j<square.length;j++)
@@ -90,7 +93,12 @@ for(var i=0;i< square.length; i++)
 		else if(clickedcolor!==pickedcolor){
 			this.style.backgroundColor="#232323";
 			instruction.textContent="Try Again!!!!";
-			
+			score-=10;
+			if(score===20 ){
+				if(flag===1){
+				instruction.textContent="Try Easy or Guess Again!!";
+				}
+			}
 		}
 	});
 }
